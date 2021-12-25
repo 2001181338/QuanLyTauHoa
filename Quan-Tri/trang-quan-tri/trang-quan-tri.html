@@ -653,6 +653,7 @@
 
         $scope.onXoaTuyen = function (tuyen) {
             $http.post(localHost + "/api/tuyen/xoa-tuyen" + "?id=" + tuyen.MaTuyen).then(function (res) {
+                
                 console.log(res.data);
                 if (!res.data.Status) {
                     $scope.isErrorGaDi = true;
