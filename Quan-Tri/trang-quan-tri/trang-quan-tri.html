@@ -468,7 +468,7 @@
                 $scope.danhSachTuyen = res.data.Data;
                 $scope.allDanhSachTuyen = res.data.Data;
                 var tongPT = $scope.danhSachTuyen.length;
-                // $scope.onFilterTuyen();
+                $scope.onFilterChuyenTau();
             });
         }
 
@@ -653,7 +653,7 @@
 
         $scope.onXoaTuyen = function (tuyen) {
             $http.post(localHost + "/api/tuyen/xoa-tuyen" + "?id=" + tuyen.MaTuyen).then(function (res) {
-                
+
                 console.log(res.data);
                 if (!res.data.Status) {
                     $scope.isErrorGaDi = true;
@@ -716,7 +716,7 @@
                 $scope.danhSachTuyen = $scope.danhSachTuyen.filter(x => x.MaGaDen == gaDen);
             }
 
-            // $scope.phanTrang($scope.danhSachTuyen.length);
+            $scope.phanTrang($scope.danhSachTuyen.length);
 
             if ($scope.danhSachTuyen.length == $scope.allDanhSachTuyen.length) {
                 $scope.isFullTuyen = true;
@@ -725,10 +725,10 @@
                 $scope.isFullTuyen = false;
             }
             $scope.danhSachTuyenTam = $scope.danhSachTuyen;
-            // $scope.onSelectTrang(1);
+            $scope.onSelectTrang(1);
         }
 
-        
+
     })
 
     app.controller("chuyenCtrl", function ($scope, $http) {
@@ -1300,14 +1300,7 @@
                 console.log(res.data?.Data)
                 $scope.danhSachChuyenTau = res.data?.Data;
                 $scope.allDanhSachChuyenTau = res.data?.Data;
-                var tongPT = $scope.danhSachChuyenTau.length;
-                $scope.phanTrang(tongPT);
-                if (!$scope.soTrangSelect) {
-                    $scope.onSelectTrang(1)
-                }
-                else {
-                    $scope.soTrangSelect($scope.soTrangSelect);
-                }
+                $scope.onFilterChuyenTau();
             })
         }
 
@@ -1510,9 +1503,12 @@
             $scope.trangSelected = soTrang;
             var soPhanTuTrenTrang = 10;
 
-            $scope.soTrangSelect = soTrang;
-
-            $scope.danhSachChuyenTau = $scope.allDanhSachChuyenTau;
+            if ($scope.isFullChuyenTau) {
+                $scope.danhSachChuyenTau = $scope.allDanhSachChuyenTau;
+            }
+            else {
+                $scope.danhSachChuyenTau = $scope.danhSachChuyenTauTam;
+            }
 
             for (var i = (soTrang - 1) * soPhanTuTrenTrang; i < soTrang * soPhanTuTrenTrang; i++) {
                 if ($scope.danhSachChuyenTau[i]) {
@@ -1568,6 +1564,17 @@
                     && new Date(x.NgayKhoiHanh).getMonth() + 1 == month
                     && new Date(x.NgayKhoiHanh).getDate() == date);
             }
+
+            $scope.phanTrang($scope.danhSachChuyenTau.length);
+
+            if ($scope.danhSachChuyenTau.length == $scope.allDanhSachChuyenTau.length) {
+                $scope.isFullChuyenTau = true;
+            }
+            else {
+                $scope.isFullChuyenTau = false;
+            }
+            $scope.danhSachChuyenTauTam = $scope.danhSachChuyenTau;
+            $scope.onSelectTrang(1);
         }
     })
 
