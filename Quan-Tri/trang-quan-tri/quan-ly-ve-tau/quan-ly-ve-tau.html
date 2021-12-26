@@ -101,7 +101,7 @@
                     <td class="border border-2">
                         <button ng-show="veTau.TrangThai == 1" class="btn btn-success" ng-click="onTraVe(veTau)">Trả
                             vé</button>
-                        <button ng-show="veTau.TrangThai == 1 && veTau.LoaiVe != 2" class="btn btn-danger"
+                        <button ng-show="veTau.TrangThai == 1 && veTau.TrangThaiVe == 1" class="btn btn-danger"
                             ng-click="onDoiVe(veTau)">Đổi vé</button>
                         <button ng-show="veTau.TrangThai == 2" class="btn btn-success"
                             ng-click="onThanhToan(veTau)">Thanh toán</button>
