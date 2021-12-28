@@ -70,7 +70,7 @@
                                 <td>{{tramGa.GaDi}}</td>
                                 <td>{{tramGa.GaDen}}</td>
                                 <td>{{tramGa.TenTau}}</td>
-                                <td>{{formatDate(tramGa.NgayKhoiHanh) | date:'dd/MM/yyyy'}}</td>
+                                <td>{{tramGa.NgayKhoiHanh | date:'dd/MM/yyyy'}}</td>
                                 <td>{{tramGa.GioKhoiHanh}}</td>
                                 <td>{{tramGa.GiaVeNgoi | number}} VNĐ</td>
                                 <td>{{tramGa.GiaVeNam | number}} VNĐ</td>
@@ -109,7 +109,7 @@
                 font-size: 14px;"><i>
                         Tàu: <b>{{chuyenTauSelectedModel.TenTau}}</b>
                         / Chuyến: <b>{{chuyenTauSelectedModel.GaDi}} <i class="fas fa-long-arrow-alt-right mr-2 ml-2"></i> {{chuyenTauSelectedModel.GaDen}}</b>
-                        / Ngày khởi hành: <b>  {{formatDate(chuyenTauSelectedModel.NgayKhoiHanh) | date:'dd-MM-yyyy'}} - {{chuyenTauSelectedModel.GioKhoiHanh}}</b>
+                        / Ngày khởi hành: <b>  {{chuyenTauSelectedModel.NgayKhoiHanh | date:'dd-MM-yyyy'}} - {{chuyenTauSelectedModel.GioKhoiHanh}}</b>
                     </i>
                 </span>
 
@@ -228,7 +228,7 @@
                                     <p>
                                         Ga đến: <b>{{chuyenTauSelectedModel.GaDen}}</b>
                                     </p>
-                                    <span>{{formatDate(chuyenTauSelectedModel.NgayKhoiHanh) | date:'dd/MM/yyyy'
+                                    <span>{{chuyenTauSelectedModel.NgayKhoiHanh | date:'dd/MM/yyyy'
                                         }} - </span>
                                     <span>{{chuyenTauSelectedModel.GioKhoiHanh}}</span>
                                 </td>
@@ -392,7 +392,7 @@
                             <tbody>
                                 <tr ng-repeat="ve in danhSachVeThanhCong">
                                     <td>{{ve.MaVe}}</td>
-                                    <td>{{formatDate(ve.NgayDat) | date:'dd/MM/yyyy'}}</td>
+                                    <td>{{(ve.NgayDat | date:'dd/MM/yyyy'}}</td>
                                     <td>{{ve.TrangThai == 1 ? "Đã thanh toán" : "Chưa thanh toán"}}</td>
                                 </tr>
                             </tbody>
