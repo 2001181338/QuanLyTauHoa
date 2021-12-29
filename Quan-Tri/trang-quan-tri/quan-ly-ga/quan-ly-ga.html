@@ -11,10 +11,10 @@
 <body>
     <div ng-app="quan-ly-ga">
         <div class="quan-ly-ga">
-            <h2>Danh sách ga</h2>
+            <h2>Danh sách ga tàu</h2>
             <hr />
             <div class="m-3">
-                <span>Lọc ga theo Tỉnh/Thành phố: </span>
+                <span>Tìm kiếm theo Tỉnh/Thành phố: </span>
                 <select ng-model="tinhSelected" ng-init="tinhSelected='0'" ng-change="onChangeTinhThanhPho()">
                     <option value="0">Tỉnh / Thành phố</option>
                     <option ng-repeat="tinh in danhSachTinhTP" ng-selected="tinhSelected == tinh.MaTinhThanhPho"

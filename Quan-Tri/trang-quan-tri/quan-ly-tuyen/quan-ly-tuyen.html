@@ -10,10 +10,10 @@
 
 <body>
     <div class="quan-ly-tuyen">
-        <h2>Danh sách tuyến</h2>
+        <h2>Danh sách tuyến tàu</h2>
         <hr />
         <div class="m-3">
-            <span>Ga đi: </span>
+            <span>Tìm kiếm theo ga đi: </span>
             <select ng-model="gaDiFilterSelect" ng-init="gaDiFilterSelect = '0'" style="width: 150px;"
                 ng-change="onFilterChuyenTau()">
                 <option value="0">Tất cả ga</option>
@@ -22,7 +22,7 @@
                     {{ga.TenGa}}
                 </option>
             </select>
-            <span>Ga đến: </span>
+            <span>Tìm kiếm theo ga đến: </span>
             <select ng-model="gaDenFilterSelect" ng-init="gaDenFilterSelect = '0'" style="width: 150px;"
                 ng-change="onFilterChuyenTau()">
                 <option value="0">Tất cả ga</option>
