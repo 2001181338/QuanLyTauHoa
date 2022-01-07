@@ -392,7 +392,7 @@
                             <tbody>
                                 <tr ng-repeat="ve in danhSachVeThanhCong">
                                     <td>{{ve.MaVe}}</td>
-                                    <td>{{(ve.NgayDat | date:'dd/MM/yyyy'}}</td>
+                                    <td>{{ve.NgayDat | date:'dd/MM/yyyy'}}</td>
                                     <td>{{ve.TrangThai == 1 ? "Đã thanh toán" : "Chưa thanh toán"}}</td>
                                 </tr>
                             </tbody>
