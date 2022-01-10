@@ -65,7 +65,7 @@
                         </td>
                         <td>
                             <select ng-model="tuyenChaSelected" class="form-control" ng-change="onChangeTuyenCha()">
-                                <option ng-repeat="tuyen in danhSachTuyen"
+                                <option ng-repeat="tuyen in danhsachTuyenCha | orderBy: 'TenGaDi'"
                                     ng-selected="tuyenChaSeleceted == tuyen.MaTuyen" value="{{tuyen.MaTuyen}}">
                                     {{tuyen.TenGaDi}}
                                     ->
@@ -118,9 +118,11 @@
                         <td ng-show="listEditTuyen.indexOf(tuyen.MaTuyen) != -1">
                             <select ng-model="tuyenChaSeleceted" class="form-control"
                                 ng-change="onChangeTuyenCha(tuyenChaSeleceted)">
-                                <option ng-repeat="tuyen in danhSachTuyen"
+                                <option ng-repeat="tuyen in danhsachTuyenCha | orderBy: 'TenGaDi'"
                                     ng-selected="tuyenChaSeleceted == tuyen.MaTuyen" value="{{tuyen.MaTuyen}}">
-                                    {{tuyen.MaTuyen}}
+                                    {{tuyen.TenGaDi}}
+                                    ->
+                                    {{tuyen.TenGaDen}}
                                 </option>
                             </select>
                         </td>

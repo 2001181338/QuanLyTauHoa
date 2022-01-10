@@ -35,7 +35,7 @@
                 <td>
                     <select ng-model="newTau" ng-init="newTau='1'" class="form-control text-center"
                         ng-change="onChangeNewTau()">
-                        <option ng-repeat="tau in danhSachNewTau" value="{{tau.MaTau}}"
+                        <option ng-repeat="tau in danhSachNewTau | orderBy: 'TenTau'" value="{{tau.MaTau}}"
                             ng-selected="newTau == tau.MaTau">
                             {{tau.TenTau}}
                         </option>
@@ -67,7 +67,7 @@
                     <button class="btn btn-danger" ng-click="onHuyThemToa()">Hủy</button>
                 </td>
             </tr>
-            <tr ng-repeat="toa in danhSachToa | orderBy: 'TenToa'">
+            <tr ng-repeat="toa in danhSachToa | orderBy: 'TenTau'">
                 <td ng-show="listSuaGa.indexOf(toa.MaToa) == -1">{{toa.TenTau}}</td>
                 <td ng-show="listSuaGa.indexOf(toa.MaToa) == -1">{{toa.TenToa}}</td>
                 <td ng-show="listSuaGa.indexOf(toa.MaToa) == -1">{{toa.LoaiCho == 1 ? "Toa nằm" : "Toa ngồi"}}</td>

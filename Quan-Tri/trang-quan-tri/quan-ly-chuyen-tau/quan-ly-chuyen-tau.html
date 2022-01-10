@@ -75,7 +75,7 @@
                                 <span class="input-group-text" id="basic-addon1" style="width: 150px;">Chuyến: </span>
                             </div>
                             <select ng-model="chuyenMoiSelected" track by $index class="form-control">
-                                <option ng-repeat="chuyen in danhSachChuyen | orderBy: 'TimeOrderBy'"
+                                <option ng-repeat="chuyen in danhSachChuyen | orderBy: 'TenGaDi'"
                                     value="{{chuyen.MaChuyen}}" ng-selected="chuyenMoiSelected == chuyen.MaChuyen">
                                     {{chuyen.TenGaDi}} -> {{chuyen.TenGaDen}} {{chuyen.GioKhoiHanh}}
                                 </option>
